@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import 'create-react-class';
@@ -10,8 +9,8 @@ let Dash = () => <div>Dash</div>
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="/" component={Home} />
-        <Route path="/dash" component={Dash} />
-    </Router >,
+        <Route path='/' component={Home} />
+        <Route path='/dash' component={Dash} />
+    </Router>,
     document.getElementById('root')
 );

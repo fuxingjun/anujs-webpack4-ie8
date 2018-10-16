@@ -64,7 +64,7 @@ module.exports = {
             {
                 test: /\.css$/,
                 include: [path.resolve(__dirname, 'src')],
-                use: ['style-loader', 'css-loade'],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
@@ -84,7 +84,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
-            template: path.resolve(__dirname, './src/index.html'),
+            template: path.resolve(__dirname, './src/index.ejs'),
             inject: 'body',
             hase: false,
             minify: {

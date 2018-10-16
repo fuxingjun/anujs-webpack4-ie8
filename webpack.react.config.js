@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     devtool: 'cheap-module-source-map',
     entry: {
-        production: path.resolve(__dirname, './views/production/app.jsx'),
+        production: path.resolve(__dirname, './src/index.jsx'),
     },
     output: {
         path: path.resolve(__dirname, 'devtmp'),
@@ -42,12 +42,12 @@ module.exports = {
                         plugins: ['transform-runtime'],
                     },
                 },
-                include: [path.resolve(__dirname, 'views')],
+                include: [path.resolve(__dirname, 'src')],
             },
             {
                 test: /\.css$/,
-                include: [path.resolve(__dirname, 'views')],
-                use: ['style-loader', 'css-loade'],
+                include: [path.resolve(__dirname, 'src')],
+                use: ['style-loader', 'css-loader'],
             },
             {
                 test: /\.(eot|woff|woff2|ttf|svg|png|jpg|gif)$/,
@@ -68,7 +68,7 @@ module.exports = {
         new es3ifyPlugin(),
         new HtmlWebpackPlugin({
             filename: 'production.html',
-            template: path.resolve(__dirname, './views/production/index.ejs'),
+            template: path.resolve(__dirname, './src/index.ejs'),
             inject: 'body',
             hase: false,
             minify: {
